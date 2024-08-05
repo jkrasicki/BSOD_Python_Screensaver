@@ -114,11 +114,12 @@ def update_progress():
     if progress < 100:
         progress += 1
         progress_var.set(f"{progress}% complete")
-        root.after(1680, update_progress)  # Update progress every 100ms
+        root.after(400, update_progress)  # Update progress every 100ms
     else:
+        show_message()
         progress = 0
         progress_var.set(f"{progress}% complete")
-        root.after(1680, update_progress)
+        root.after(400, update_progress)
 
 # Show a random message
 def show_message():
